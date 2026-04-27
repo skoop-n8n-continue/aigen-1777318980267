@@ -1,6 +1,6 @@
 'use strict';
 
-const CACHE_NAME = 'skoop-app-aigen-1777317051098';
+const CACHE_NAME = 'skoop-app-aigen-1777318980267';
 
 const NETWORK_ONLY_HOSTS = [
   'timeapi.io',
