@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="manifest" href="./manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realeaf Brands</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="logo-container" id="home-btn">
+            <img src="assets/realeaf_logo_white.png" alt="Realeaf Logo" class="main-logo">
+        </div>
+        <div class="header-nav" id="header-nav" style="display: none;">
+            <button class="back-btn" id="back-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Brands
+            </button>
+        </div>
+    </header>
+
+    <!-- Brands Screen -->
+    <main id="brands-screen" class="screen active">
+        <div class="brands-intro">
+            <h1>Our Brands</h1>
+            <p>Explore our premium collections crafted for every element.</p>
+        </div>
+        
+        <div class="brands-grid">
+            <!-- Rendered via JS -->
+        </div>
+    </main>
+
+    <!-- Products Screen -->
+    <main id="products-screen" class="screen">
+        <div class="brand-hero">
+            <img src="" alt="Brand Promo" id="brand-promo-img" class="brand-promo-img">
+            <div class="brand-hero-overlay">
+                <img src="" alt="Brand Logo" id="brand-hero-logo" class="brand-hero-logo">
+                <p id="brand-hero-desc" class="brand-hero-desc"></p>
+            </div>
+        </div>
+        
+        <div class="products-section">
+            <div class="products-header">
+                <h2>Products</h2>
+                <div class="filters">
+                    <button class="filter-btn active" data-tag="all">All</button>
+                    <!-- Other filters rendered via JS -->
+                </div>
+            </div>
+            
+            <div class="products-grid" id="products-grid">
+                <!-- Rendered via JS -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Product Modal / Popup -->
+    <div id="product-modal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="close-btn" id="close-modal-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="modal-body">
+                <div class="product-image-container">
+                    <img src="" alt="Product Image" id="modal-product-img">
+                </div>
+                <div class="product-details">
+                    <div class="product-tags" id="modal-product-tags"></div>
+                    <h2 id="modal-product-name"></h2>
+                    <h3 id="modal-product-subtitle"></h3>
+                    <div class="product-price" id="modal-product-price"></div>
+                    <p id="modal-product-desc"></p>
+                    
+                    <div class="product-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Size/Weight:</span>
+                            <span class="meta-value" id="modal-product-size"></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Potency:</span>
+                            <span class="meta-value" id="modal-product-potency"></span>
+                        </div>
+                    </div>
+                    
+                    <button class="action-btn">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./sw.js')
+          .then(function (reg) { console.log('[PWA] SW registered:', reg.scope); })
+          .catch(function (err) { console.warn('[PWA] SW registration failed:', err); });
+      });
+    }
+  </script>
+</body>
+</html>
